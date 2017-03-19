@@ -9,12 +9,33 @@
 
 <body ng-controller="appCtrl">
 
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <img alt="Brand" src="">
+        </a>
+      </div>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" ng-model="search"/>
+        </div>
+      </form>
+    </div>
+  </nav>
+
+  <nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+
+    </div>
+  </nav>
+
   <div class="row">
     <div class="col-md-12">
 
       <h5>Songs</h5>
       <ul>
-        <li ng-repeat="song in songs">
+        <li ng-repeat="song in songs | filter: search">
           <button music-player="play" add-song="song">{{ song.title }}</button>
           <button music-player add-song="song">+</button>
         </li>
@@ -37,8 +58,8 @@
         Currently Playing: {{ currentPlaying.title }} by {{ currentPlaying.artist }} ({{ currentPostion }} / {{ currentDuration }})
       </p>
 
-      <div class="seekBase" seek-track>
-        <div class="seekLoad" ng-style="{width : ( progress + '%' ) }"></div>
+      <div class="seekBase progress" seek-track>
+        <div class="seekLoad progress-bar" ng-style="{width : ( progress + '%' ) }"></div>
       </div>
       <br />
       <button play-music>Play</button> -
@@ -74,6 +95,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="dist/angular-soundmanager2.min.js"></script>
   <script src="assets/app.js"></script>
 </body>
