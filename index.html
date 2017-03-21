@@ -3,32 +3,108 @@
 
 <head>
   <title></title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 
 <body ng-controller="appCtrl">
 
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">Logo</a>
+        <form id="search-bar">
+          <div class="input-field">
+            <input id="search" type="search" required>
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+            <i class="material-icons">close</i>
+          </div>
+        </form>
+        <div></div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="navbar-fixed" id="nav-bottom">
+    <nav id="music-ctrl">
+      <div class="nav-wrapper row">
+        <img class="col s1" />
+        <div class="col s2">
+          Song Artist <br/>
+          Song Album
+        </div>
+        <div class="col s6">
+          <div class="progress">
+            <div class="determinate" style="width: 70%"></div>
+          </div>
+        </div>
+        <div class="col s3">
+          <i class="fa fa-step-backward"></i>
+          <i class="fa fa-play"></i>
+          <i class="fa fa-pause"></i>
+          <i class="fa fa-step-forward"></i>
+        </div>
+        <div>
+          <i class="fa fa-repeat"></i>
+          <i class="fa fa-volume-up"></i>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!--
   <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-      <div class="navbar-header">
+    <div class="container-fluid row">
+      <div class="navbar-header col-md-3">
         <a class="navbar-brand" href="#">
           <img alt="Brand" src="">
         </a>
       </div>
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search" ng-model="search"/>
+      <form class="navbar-form col-md-6">
+        <div class="form-group ">
+          <input type="text" class="form-control" placeholder="Search" ng-model="search" />
         </div>
       </form>
+      <div class="col-md-1">
+
+      </div>
     </div>
   </nav>
 
-  <nav class="navbar navbar-default navbar-fixed-bottom">
-    <div class="container-fluid">
-
+  <nav class="navbar text-white navbar-inverse navbar-fixed-bottom">
+    <div class="container-fluid row">
+      <div class="col-md-3">
+        <div class="col-md-4">
+          <img/>
+        </div>
+        <div class="col-md-8">
+          <div class="">
+            Song Title <br>
+            Song Artist
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="col-md-9">
+          <div class="progress"></div>
+        </div>
+        <div class="col-md-3">
+          <div class="">
+            <i class="fa fa-step-backward"></i>
+            <i class="fa fa-play"></i>
+            <i class="fa fa-pause"></i>
+            <i class="fa fa-step-forward"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1">
+        <i class="fa fa-repeat"></i>
+        <i class="fa fa-volume-up"></i>
+      </div>
     </div>
   </nav>
+-->
 
   <div class="row">
     <div class="col-md-12">
@@ -47,11 +123,10 @@
     </div>
   </div>
 
-  <hr />
+  <br/>
 
   <div class="row">
     <div class="col-md-12">
-      <!-- init soundManager2 player -->
       <sound-manager></sound-manager>
 
       <p>
@@ -61,6 +136,7 @@
       <div class="seekBase progress" seek-track>
         <div class="seekLoad progress-bar" ng-style="{width : ( progress + '%' ) }"></div>
       </div>
+
       <br />
       <button play-music>Play</button> -
       <button pause-music>Pause</button> -
@@ -93,9 +169,9 @@
   </div>
 
 
-
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
   <script src="dist/angular-soundmanager2.min.js"></script>
   <script src="assets/app.js"></script>
 </body>
