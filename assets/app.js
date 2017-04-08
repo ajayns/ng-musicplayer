@@ -12,7 +12,7 @@ app.controller('appCtrl', function ($scope) {
     },
     { id: "2",
       mood: "happy",
-      title: "Sleepwalker (feat. Joni Fatora)",
+      title: "Sleepwalker",
       artist: "Illenium",
       url: "src/mp3/2.mp3",
       albumart: "src/img/2.jpg",
