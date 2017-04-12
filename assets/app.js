@@ -1,6 +1,8 @@
 var app = angular.module('app', ['angularSoundManager']);
 
 app.controller('appCtrl', function ($scope) {
+
+  // Sample Data
   $scope.songs = [
     { id: "1",
       mood: "happy",
@@ -28,6 +30,7 @@ app.controller('appCtrl', function ($scope) {
     }
   ];
 
+  // Init variables
   $scope.isPlaying = false;
   $scope.songHover = false;
 })
